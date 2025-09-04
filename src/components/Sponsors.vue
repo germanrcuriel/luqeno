@@ -1,98 +1,72 @@
 <script setup lang="ts">
+import { useColorMode } from "@vueuse/core";
 import { Marquee } from "@selemondev/vue3-marquee";
 import "@selemondev/vue3-marquee/dist/style.css";
 
-import {
-  Crown,
-  Vegan,
-  Ghost,
-  Puzzle,
-  Squirrel,
-  Cookie,
-  Drama,
-} from "lucide-vue-next";
-
 interface sponsorsProps {
-  icon: string;
+  image: string;
   name: string;
 }
 
 const sponsors: sponsorsProps[] = [
   {
-    icon: "crown",
-    name: "Acmebrand",
+    image: "brands/aicoco.png",
+    name: "Aicoco",
   },
   {
-    icon: "vegan",
-    name: "Acmelogo",
+    image: "brands/fifine.png",
+    name: "Fifine",
   },
   {
-    icon: "ghost",
-    name: "Acmesponsor",
+    image: "brands/irobot.png",
+    name: "iRobot",
   },
   {
-    icon: "puzzle",
-    name: "Acmeipsum",
+    image: "brands/maono.png",
+    name: "Maono",
   },
   {
-    icon: "squirrel",
-    name: "Acme",
+    image: "brands/qcy.png",
+    name: "QCY",
   },
   {
-    icon: "cookie",
-    name: "Accmee",
-  },
-  {
-    icon: "drama",
-    name: "Acmetech",
+    image: "brands/soundpeats.png",
+    name: "Soundpeats",
   },
 ];
 
-const iconMap: Record<
-  string,
-  | typeof Crown
-  | typeof Vegan
-  | typeof Ghost
-  | typeof Puzzle
-  | typeof Squirrel
-  | typeof Cookie
-  | typeof Drama
-> = {
-  crown: Crown,
-  vegan: Vegan,
-  ghost: Ghost,
-  puzzle: Puzzle,
-  squirrel: Squirrel,
-  cookie: Cookie,
-  drama: Drama,
-};
+const mode = useColorMode();
+mode.value = "dark";
 </script>
 
 <template>
   <section
     id="sponsors"
-    class="max-w-[75%] mx-auto pb-24 sm:pb-32"
+    class="max-w-[75%] mx-auto pb-8 sm:pb-8"
   >
-    <h2 class="text-lg md:text-xl text-center mb-6">Our Platinum Sponsors</h2>
+    <h2 class="text-lg md:text-xl text-center mb-6">Colaboraciones</h2>
 
     <div class="mx-auto">
       <Marquee
         class="gap-[3rem]"
-        :pauseOnHover="true"
         :fade="true"
         innerClassName="gap-[3rem]"
       >
         <div
-          v-for="{ icon, name } in sponsors"
+          v-for="{ image, name } in sponsors"
           :key="name"
         >
-          <div class="flex items-center text-xl md:text-2xl font-medium">
-            <component
-              :is="iconMap[icon]"
-              class="mr-2"
-              stroke-width="3"
+          <div 
+            :class="{
+              'invert': mode === 'dark',
+              'flex items-center opacity-75': true
+            }"
+          >
+            <img
+              class="mr-2 max-w-none max-h-6 h-6"
+              :src="image"
+              :alt="name"
             />
-            {{ name }}
           </div>
         </div>
       </Marquee>
