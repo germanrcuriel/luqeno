@@ -43,7 +43,7 @@ import { Button } from "@/components/ui/button";
 
         <div class="w-[100%] md:w-[70%] aspect-video mx-auto bg-gradient-to-r from-primary to-[#D247BF] rounded p-1 img-border-animation">
           <video autoplay muted class="w-full md:w-[100%] mx-auto aspect-video relative leading-none flex items-center">
-            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4" type="video/mp4" />
           </video>
         </div>
       </div>
