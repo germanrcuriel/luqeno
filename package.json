@@ -21,7 +21,7 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && vite build && rm -rf docs && mv dist docs && cp CNAME docs",
+    "build": "vue-tsc && vite build && rm -rf docs && mv dist docs && cp CNAME docs && git add . && git commit -m \"Publish\" && git push luqeno main",
     "preview": "vite preview"
   },
   "dependencies": {

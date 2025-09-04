@@ -42,7 +42,7 @@ import { Button } from "@/components/ui/button";
         <div class="absolute -top-6 right-12 w-[100%] md:w-[70%] h-12 lg:h-[80%] bg-primary/50 blur-3xl rounded-full img-shadow-animation" />
 
         <div class="w-[100%] md:w-[70%] aspect-video mx-auto bg-gradient-to-r from-primary to-[#D247BF] rounded p-1 img-border-animation">
-          <video autoplay muted class="w-full md:w-[100%] mx-auto aspect-video relative leading-none flex items-center">
+          <video autoplay loop muted playsinline class="w-full md:w-[100%] mx-auto aspect-video relative leading-none flex items-center">
             <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4" type="video/mp4" />
           </video>
         </div>
